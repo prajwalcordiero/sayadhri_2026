@@ -1,0 +1,36 @@
+{
+  "name": "swasthasetu",
+  "version": "1.0.0",
+  "description": "SwasthaSetu - Low-Bandwidth Telemedicine Prototype for Coastal & Hill Talukas",
+  "main": "server/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -n \"SERVER,CLIENT\" -c \"blue,green\" \"node server/index.js\" \"npm run dev --prefix client\"",
+    "server": "node server/index.js",
+    "client": "npm run dev --prefix client",
+    "seed": "node server/db/seed.js",
+    "test": "node --test server/tests/*.test.js",
+    "build": "npm run build --prefix client"
+  },
+  "keywords": [
+    "telemedicine",
+    "low-bandwidth",
+    "webrtc",
+    "offline-first",
+    "pwa",
+    "rural-healthcare"
+  ],
+  "author": "Antigravity Engineering",
+  "license": "MIT",
+  "dependencies": {
+    "better-sqlite3": "^11.8.1",
+    "compression": "^1.8.0",
+    "concurrently": "^9.1.2",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "socket.io": "^4.8.1",
+    "uuid": "^11.1.0"
+  }
+}
